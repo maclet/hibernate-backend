@@ -31,7 +31,7 @@ public class CartTest
 		c.setPhone(p);
 		cdi.addCartItem(c);
 	}
-	//
+	
 	@Test
 	public void displayCartItemsByName()
 	{
