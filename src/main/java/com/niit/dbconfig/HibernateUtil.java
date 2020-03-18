@@ -7,6 +7,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import com.niit.model.CartItem;
+import com.niit.model.Phone;
 //import com.niit.model.Book;
 //import com.niit.model.CartItem;
 import com.niit.model.User;
@@ -25,8 +27,8 @@ public class HibernateUtil
 		Configuration cfg=new Configuration();
 		cfg.configure("hibernate.cfg.xml");
 		cfg.addAnnotatedClass(User.class);
-		//cfg.addAnnotatedClass(Book.class);
-		//cfg.addAnnotatedClass(CartItem.class);
+		cfg.addAnnotatedClass(Phone.class);
+		cfg.addAnnotatedClass(CartItem.class);
 		ServiceRegistry reg=new StandardServiceRegistryBuilder().applySettings(cfg.getProperties()).build();
 		factory=cfg.buildSessionFactory(reg);
 	}
